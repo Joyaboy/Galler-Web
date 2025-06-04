@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bio Data</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ece9e6, #ffffff);
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    h1::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: #6c63ff;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    .biodata-card {
+      display: flex;
+      background: #f9f9f9;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 25px;
+      gap: 20px;
+      align-items: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .biodata-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .foto {
+      width: 130px;
+      height: 160px;
+      background: linear-gradient(145deg, #dddddd, #eeeeee);
+      border-radius: 10px;
+      border: 3px dashed #bbb;
+      flex-shrink: 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .foto:hover {
+      transform: scale(1.05);
+    }
+
+    .data {
+      flex: 1;
+    }
+
+    .data p {
+      margin: 8px 0;
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .data strong {
+      color: #222;
+    }
+
+    .foto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .biodata-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .foto {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Bio Data</h1>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar8.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                  : Makwa Muwahiddin </p>
+        <p><strong>Tempat/Tanggal Lahir</strong>  : Medan, 25 September 2005 </p>
+        <p><strong>Alamat</strong>                : Jl.Gaharu </p>
+        <p><strong>Status</strong>                : Lajang </p>
+      </div>
+    </div>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar15.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                  : Fadhlan Muhajir</p>
+        <p><strong>Tempat/Tanggal Lahir</strong>  : </p>
+        <p><strong>Alamat</strong>                : Jl.Sutomo </p>
+        <p><strong>Status</strong>                : Lajang </p>
+      </div>
+    </div>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar13.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                  : Teguh Pratama </p>
+        <p><strong>Tempat/Tanggal Lahir</strong>  : Medan, 08 July 2005 </p>
+        <p><strong>Alamat</strong>                : Jl.Lapangan II, Bandar Setia </p>
+        <p><strong>Status</strong>                : Lajang </p>
+      </div>
+    </div>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar17.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                  : Muhammad Hafiz Alfizar</p>
+        <p><strong>Tempat/Tanggal Lahir</strong>  : Medan, 16 Mei 2005 </p>
+        <p><strong>Alamat</strong>                : Bandar Setia </p>
+        <p><strong>Status</strong>                : Lajang</p>
+      </div>
+    </div>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar16.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                : Berkah Ramadhanta Sinabutar </p>
+        <p><strong>Tempat/Tanggal Lahir</strong>: Medan, 04 Oct 2005 </p>
+        <p><strong>Alamat</strong>              : Bandar Setia </p>
+        <p><strong>Status</strong>              : Lajang </p>
+      </div>
+    </div>
+
+    <div class="biodata-card">
+      <div class="foto">
+        <img src="gambar14.jpg" alt="Foto Biodata">
+      </div>
+      <div class="data">
+        <p><strong>Nama</strong>                : Buniamin Batubara </p>
+        <p><strong>Tempat/Tanggal Lahir</strong>: - </p>
+        <p><strong>Alamat</strong>              : - </p>
+        <p><strong>Status</strong>              : Lajang</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
