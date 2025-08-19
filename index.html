@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Galeri</title>
-  <img src="gambar0.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
   <style>
     * {
       box-sizing: border-box;
@@ -144,15 +143,45 @@
       background-color: black;
       margin: 40px 0;
     }
+    body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-image: url('Gambar47.jpg');
+  background-size: cover;              /* Pastikan gambar menutupi seluruh layar */
+  background-position: center;         /* Fokus ke tengah gambar */
+  background-repeat: no-repeat;
+     /* Efek parallax (gambar diam saat scroll) */
+  min-height: 100vh;                   /* Minimal setinggi tampilan */
+  width: 100%;
+  color: #333;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;   /* agar gambar selalu di tengah */
+  border-radius: 10px; /* opsional, biar ada sudut membulat */
+}
+.gallery img,
+    .gallery video {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
   </style>
 </head>
 <body>
-
   <header>
     <h1>Selamat Datang</h1>
     <p>GALLERY BUNIAMIN FAMILY.</p>
   </header> 
+  
+  <img src="Gambar45.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
 
   <section class="gallery">
     <img src="Gambar1.jpg" alt="Foto 1">
@@ -167,6 +196,8 @@
     <img src="gambar10.jpg" alt="Foto 10">
     <img src="gambar11.jpg" alt="Foto 11">
     <img src="gambar12.jpg" alt="Foto 12">
+    
+  
 
     <video controls>
       <source src="video2.mp4" type="video/webm" />
@@ -182,9 +213,9 @@
     </video>
   </section>
 
-  <hr>
 
-  <img src="gambar0.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
+
+  <img src="Gambar45.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
 
   <header>
     <h1 class="animated-header">LAINNYA</h1>
