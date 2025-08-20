@@ -12,7 +12,13 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f8f9fa;
+      background-image: url('Gambar47.jpg');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      min-height: 100vh;
+      width: 100%;
       color: #333;
       overflow-x: hidden;
     }
@@ -20,7 +26,7 @@
     header {
       text-align: center;
       padding: 40px 20px 20px;
-      background-color: #ffffff;
+      background-color: #e0e0e0; /* Background abu-abu */
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
@@ -47,7 +53,8 @@
     .gallery img,
     .gallery video {
       width: 100%;
-      height: auto;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
       border-radius: 10px;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -143,58 +150,46 @@
       background-color: black;
       margin: 40px 0;
     }
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('Gambar47.jpg');
-  background-size: cover;              /* Pastikan gambar menutupi seluruh layar */
-  background-position: center;         /* Fokus ke tengah gambar */
-  background-repeat: no-repeat;
-     /* Efek parallax (gambar diam saat scroll) */
-  min-height: 100vh;                   /* Minimal setinggi tampilan */
-  width: 100%;
-  color: #333;
-  overflow-x: hidden;
-}
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-image: url('Gambar47.jpg');
-  background-size: cover;        /* gambar menutupi layar */
-  background-position: center;   /* fokus di tengah */
-  background-repeat: no-repeat;  /* tidak diulang */
-  min-height: 100vh;             /* setinggi layar */
-  width: 100%;
-  color: #333;
-  overflow-x: hidden;
-}
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;   /* agar gambar selalu di tengah */
-  border-radius: 10px; /* opsional, biar ada sudut membulat */
-}
-.gallery img,
-    .gallery video {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
       border-radius: 10px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Container untuk gambar tanpa background abu-abu */
+    .image-container {
+      padding: 0;
+      margin: 20px 0;
+    }
+
+    /* Header kedua dengan background abu-abu penuh */
+    .button-section {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: #e0e0e0; /* Background abu-abu */
+      margin: 0;
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
     }
 
   </style>
 </head>
 <body>
+  <div class="image-container" style="margin: 0; padding: 0;">
+    <img src="Gambar45.jpg" alt="Gambar Tambahan" style="width: 100vw; height: 75vh; object-fit: cover; border-radius: 0;" />
+  </div>
+
   <header>
     <h1>Selamat Datang</h1>
     <p>GALLERY BUNIAMIN FAMILY.</p>
-  </header> 
-  
-  <img src="Gambar45.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
+  </header>
 
   <section class="gallery">
     <img src="Gambar1.jpg" alt="Foto 1">
@@ -209,8 +204,6 @@ img {
     <img src="gambar10.jpg" alt="Foto 10">
     <img src="gambar11.jpg" alt="Foto 11">
     <img src="gambar12.jpg" alt="Foto 12">
-    
-  
 
     <video controls>
       <source src="video2.mp4" type="video/webm" />
@@ -226,13 +219,13 @@ img {
     </video>
   </section>
 
+  <div class="image-container" style="margin: 0; padding: 0;">
+    <img src="Gambar48.jpg" alt="Gambar Tambahan" style="width: 100vw; height: 80vh; object-fit: cover; border-radius: 0;" />
+  </div>
 
-
-  <img src="gambar0.jpg" alt="Gambar Tambahan" style="max-width: 100%; height: auto;" />
-
-  <header>
+  <div class="button-section">
     <a href="terbaru.html" class="action-button">Klik Disini</a>
-  </header>
+  </div>
 
   <div class="lightbox" id="lightbox">
     <img id="lightbox-img" src="" alt="">
