@@ -28,21 +28,19 @@
       padding: 2rem 1rem;
       background-color: rgba(224,224,224,0.9);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      animation: fadeDown 1.2s ease;
+      opacity: 0;
+      animation: fadeInOnce 1.5s ease forwards;
     }
 
     header h1 {
       margin: 0;
       font-size: clamp(1.8rem, 4vw, 2.5rem);
-      animation: glow 3s infinite alternate;
     }
 
     header p {
       margin-top: 5px;
       font-size: clamp(1rem, 2.5vw, 1.2rem);
       color: #666;
-      opacity: 0;
-      animation: fadeIn 2s forwards 1s;
     }
 
     .gallery {
@@ -61,21 +59,15 @@
       object-fit: cover;
       border-radius: 10px;
       cursor: pointer;
-      transform: translateY(40px);
       opacity: 0;
-      transition: transform 0.6s ease, box-shadow 0.3s ease, opacity 0.6s;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
     }
 
     .gallery img.visible,
     .gallery video.visible {
-      transform: translateY(0);
       opacity: 1;
-    }
-
-    .gallery img:hover,
-    .gallery video:hover {
-      transform: scale(1.05);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+      transform: translateY(0);
     }
 
     .lightbox {
@@ -86,14 +78,12 @@
       background-color: rgba(0, 0, 0, 0.8);
       align-items: center;
       justify-content: center;
-      animation: fadeIn 0.5s ease;
     }
 
     .lightbox img {
       max-width: 90%;
       max-height: 85%;
       border-radius: 10px;
-      animation: zoomIn 0.5s ease;
     }
 
     .action-button {
@@ -110,7 +100,6 @@
       transition: all 0.3s ease;
       box-shadow: 0 4px 15px rgba(74, 107, 255, 0.4);
       text-decoration: none;
-      animation: pulse 2s infinite;
     }
 
     .action-button:hover {
@@ -125,7 +114,8 @@
       max-height: 80vh;
       object-fit: cover;
       display: block;
-      animation: zoomHero 15s infinite alternate ease-in-out;
+      opacity: 0;
+      animation: fadeInOnce 2s ease forwards;
     }
 
     .button-section {
@@ -135,30 +125,10 @@
       width: 100%;
     }
 
-    /* Keyframes Animasi */
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-    @keyframes fadeDown {
-      from {opacity: 0; transform: translateY(-50px);}
-      to {opacity: 1; transform: translateY(0);}
-    }
-    @keyframes zoomIn {
-      from {transform: scale(0.8);}
-      to {transform: scale(1);}
-    }
-    @keyframes pulse {
-      0%,100% {box-shadow: 0 0 10px rgba(0, 212, 255, 0.6);}
-      50% {box-shadow: 0 0 25px rgba(74, 107, 255, 0.9);}
-    }
-    @keyframes glow {
-      0% {text-shadow: 0 0 5px #4a6bff;}
-      100% {text-shadow: 0 0 20px #00d4ff;}
-    }
-    @keyframes zoomHero {
-      from {transform: scale(1);}
-      to {transform: scale(1.1);}
+    /* Keyframes sekali jalan */
+    @keyframes fadeInOnce {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     /* Responsif */
@@ -218,25 +188,28 @@
   </div>
 
   <script>
-    const galleryImages = document.querySelectorAll('.gallery img, .gallery video');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+    const galleryItems = document.querySelectorAll('.gallery img, .gallery video');
 
-    // Animasi muncul saat scroll
+    // Observer untuk animasi fade-in saat scroll
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
         }
       });
-    }, {threshold: 0.2});
+    }, { threshold: 0.2 });
 
-    galleryImages.forEach(img => {
-      observer.observe(img);
+    // Kasih delay bertahap
+    galleryItems.forEach((item, index) => {
+      item.style.transitionDelay = `${index * 0.1}s`; // delay 0.1 detik per item
+      observer.observe(item);
     });
 
-    // Lightbox untuk gambar
+    // Lightbox hanya untuk gambar
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
     const onlyImages = document.querySelectorAll('.gallery img');
+
     onlyImages.forEach(img => {
       img.addEventListener('click', () => {
         lightbox.style.display = 'flex';
